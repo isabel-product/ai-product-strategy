@@ -1,9 +1,9 @@
 # Three-Axis Vulnerability Diagnostic
 
 ## Product
-<!-- Name the product you're diagnosing. Real product at your company — not a hypothetical. -->
+<!-- Name the product you're diagnosing. Real product at your company — not a hypothetical. --> RyFlow
 
-**Product: RyFlow**
+**Product: RyFlow is an AI-driven data-integration and quality layer that reconciles client and encounter records across a Ryan White program's clinical, case management, and reporting systems so staff can stop manually de-duplicating data and trust what they submit for required federal reporting. RyFlow produces clean, de-duplicated, cross-validated data ready for RSR (Ryan White Services Report) and ADR (Annual Data Report) submission. The core pain it targets: program staff currently do manual de-duplication and re-key the same client/encounter data into multiple systems, which erodes data quality and burns staff time every reporting cycle.**
 **Your Role: Director of Product**
 
 ---

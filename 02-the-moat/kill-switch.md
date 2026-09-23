@@ -4,10 +4,10 @@
 
 | Dimension | Current State | Risk Level | 48-Hour Action |
 |-----------|--------------|------------|---------------|
-| **Provider** |Azure | H / **M** / L | Document every place the field-mapping suggestion feature would call the provider directly, to confirm the dependency stays contained to one service, not scattered across the codebase|
-| **Abstraction** |Abstraction Layer - build mapping suggestion calls that go through this interface.  |** H **/ M / L |Build the single interface every mapping-suggestion call goes through, so nothing else in the code imports the vendor SDK directly |
-| **Routing** | | H /** M** / L | Add a basic rule (e.g. "if the eval flags a regression, fall back to Model B automatically") so routing doesn't require a human to notice and flip the switch|
-| **Eval** |	No automated test set exists to confirm a replacement model is good enough before switching |** H** / M / L | 	Build a 50-pair regression set (real source-field → canonical-field examples with known right answers) and a script that scores any candidate model against it |
+| **Provider** |Azure | M | Document every place the field-mapping suggestion feature would call the provider directly, to confirm the dependency stays contained to one service, not scattered across the codebase|
+| **Abstraction** |Abstraction Layer - build mapping suggestion calls that go through this interface.  | H |Build the single interface every mapping-suggestion call goes through, so nothing else in the code imports the vendor SDK directly |
+| **Routing** | | M | Add a basic rule (e.g. "if the eval flags a regression, fall back to Model B automatically") so routing doesn't require a human to notice and flip the switch|
+| **Eval** |	No automated test set exists to confirm a replacement model is good enough before switching | H | 	Build a 50-pair regression set (real source-field → canonical-field examples with known right answers) and a script that scores any candidate model against it |
 
 ## Portability Score
 <!-- Ready / Partial / Locked --> The core reconciliation engine (rules, precedence, conflict detection, RSR/ADR export) has zero AI dependency and would keep working through any provider issue. The field-mapping suggestion feature specifically is not abstracted or eval-tested yet, so a forced switch there today would be a scramble, not a flip of a setting.

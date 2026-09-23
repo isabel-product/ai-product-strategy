@@ -6,10 +6,10 @@
 |--------------|----------------|-------|
 | Inference (primary model) |~$0.15-$0.50 |~20-50 field-mapping suggestion calls/month at a classification-task rate; heaviest during onboarding, then mostly idle until a source system's schema changes |
 | Inference (cascading/triage) |~$0.02-$0.05 |A lightweight model handles the bulk of routine field matches; only low-confidence cases would ever need to escalate to a stronger model |
-| Infrastructure | |Hosting, integration connections (Epic/CAREWare/case management endpoints), and de-dup matching compute (Splink-style, not AI-driven, but real compute cost that scales with client record volume) |
-| Data/storage | |Client records, mapping configs, audit logs — grows with agency size, not with AI usage |
+| Infrastructure | $110-160 |Hosting, integration connections (Epic/CAREWare/case management endpoints), and de-dup matching compute (Splink-style, not AI-driven, but real compute cost that scales with client record volume) |
+| Data/storage |$30-50 |Client records, mapping configs, audit logs — grows with agency size, not with AI usage |
 | Human-in-the-loop |NA |Happens on the customer's side-- agency staff reviewing suggestions, not a cost RyFlow absorbs |
-| **Total AI COGS** | |Cost is mostly driven by infrastructure |
+| **Total AI COGS** | $210.55 |Cost is mostly driven by infrastructure |
 
 ## Cascading Strategy
 <!-- Cheap model → frontier model routing logic -->

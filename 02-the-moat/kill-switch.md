@@ -6,7 +6,7 @@
 |-----------|--------------|------------|---------------|
 | **Provider** |Azure | M | Document every place the field-mapping suggestion feature would call the provider directly, to confirm the dependency stays contained to one service, not scattered across the codebase|
 | **Abstraction** |Abstraction Layer - build mapping suggestion calls that go through this interface.  | H |Build the single interface every mapping-suggestion call goes through, so nothing else in the code imports the vendor SDK directly |
-| **Routing** | | M | Add a basic rule (e.g. "if the eval flags a regression, fall back to Model B automatically") so routing doesn't require a human to notice and flip the switch|
+| **Routing** | A config setting lets mapping suggestion field point at a different HIPAA-compliant model without a code change; not yet automated | M | Add a basic rule (e.g. "if the eval flags a regression, fall back to Model B automatically") so routing doesn't require a human to notice and flip the switch|
 | **Eval** |	No automated test set exists to confirm a replacement model is good enough before switching | H | 	Build a 50-pair regression set (real source-field → canonical-field examples with known right answers) and a script that scores any candidate model against it |
 
 ## Portability Score

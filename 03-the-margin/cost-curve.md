@@ -38,4 +38,4 @@
 
 **Before (traditional SaaS):**A flat $400/month subscription per agency, regardless of size or number of client records. A 200-client program and a 3,000-client program pay identically.
 **After (AI-enabled):**$400/month base + $0.15 per client record reconciled per cycle. A mid-size agency (800 records) lands at ~$520/month; a large consortium (3,000 records) lands at ~$850/month — pricing now scales with the actual value delivered, not just platform access.
-**Net margin shift:**Roughly +30% revenue on a typical mid-size agency (from $400 flat to ~$520 metered) and proportionally more on larger agencies, at low AI costs.
+**Net margin shift:**Earning more revenue due to the metered addition which scales revenue with the size of clients. 

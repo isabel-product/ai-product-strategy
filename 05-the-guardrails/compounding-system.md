@@ -34,6 +34,8 @@ Not applicable.
 
 ## Shadow AI Audit
 
+<img width="692" height="239" alt="image" src="https://github.com/user-attachments/assets/7956dc20-cdd6-4a36-92d5-9172ad9c33dd" />
+
 ## Discover, User-Side Workarounds
 - A data quality lead keeps a personal spreadsheet tracking "which system wins for which field," because the same override keeps getting asked again every reporting cycle | source: Other | signal: Capability gap | freq: H | spend: $0/mo | decision: Build
 - Staff at a second agency, hearing informally from a peer agency's data lead which Epic fields map to which RSR categories, manually replicate that mapping by hand instead of getting it suggested | source: Support ticket | signal: Capability gap | freq: H | spend: $0/mo | decision: Build
@@ -46,6 +48,7 @@ Not applicable.
 - Ignore decisions: 0
 - Adjacent spend: $50/mo
 - Dominant signal: Capability gap
+<img width="722" height="337" alt="image" src="https://github.com/user-attachments/assets/72c0fde7-5b29-491a-8648-24027c8a0c6b" />
 
 ## Action Plan
 ### Build

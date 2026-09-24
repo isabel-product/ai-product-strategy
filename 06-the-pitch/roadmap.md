@@ -11,9 +11,9 @@
 |Persist Field Authority precedence rules per agency to a real production database | Bet| H |
 |Build the abstraction layer (suggestField()) so every AI suggestion call routes through one interface, not scattered vendor SDK calls |Guardrails |H|
 |Build the 50-pair golden dataset and wire it into CI as a deploy gate (block if accuracy <85% or hallucination >5%) |Contract |H|
-|Ship tiered confidence UX: Accept + Override always available, Accept hidden below 70% confidence |Contract |H
-|Implement cascading model routing: lightweight model handles routine field matches, escalate low-confidence cases to a stronger model once, then fall back to manual |Margin |H
-|Onboard first 2-3 design-partner agencies on read-only Epic + CAREWare integration |**Contract**et |H|
+|Ship tiered confidence UX: Accept + Override always available, Accept hidden below 70% confidence |Contract |H|
+|Implement cascading model routing: lightweight model handles routine field matches, escalate low-confidence cases to a stronger model once, then fall back to manual |Margin |H|
+|Onboard first 2-3 design-partner agencies on read-only Epic + CAREWare integration |**Contract** |H|
 
 ### Horizon 2 — Next (3-9 months)
 *Bets. Requires new capabilities or integrations.*
@@ -62,3 +62,27 @@
 **M1 baseline:**
 
 **Now:**
+
+Thesis (1 sentence):
+Ryan White programs already trust us for CAREWare-adjacent work — RyFlow turns a manual data-reconciliation burden they already have into a natural extension of a relationship we already own.
+
+The case:
+
+Why now: Our product line already touches CAREWare and EHR interfaces, so the customer relationship and technical adjacency exist before we build anything new. The pressure to act isn't invented — HRSA's own CAREWare team is the most credible platform threat, and our own kill criteria says this bet doesn't hold if their roadmap ships native multi-system reconciliation within 12 months. That's a real window, not an arbitrary one.
+What's defensible: Vulnerability scoring today is honest, not flattering — Moat 3/5, Data 2/5, Platform 3/5. The named weak point is Data Advantage: this is a one-agency-at-a-time tool today, with no cross-agency learning yet. The fix — a shared crosswalk library so agency #50 benefits from what agencies #1-49 already confirmed — is scoped, funded in this ask, and not yet built. We're not claiming a moat we haven't earned.
+The economics: At a mid-size agency's real cost basis ($145.28/month, mostly infrastructure and integration maintenance, not AI), a flat $400/month subscription yields 63.7% gross margin. Moving to our proposed hybrid model — $400 base plus $0.15 per client record reconciled — lifts that to 72.1%, because pricing now scales with agency size the same way cost already does. AI inference itself is under $0.30/agency/month regardless of pricing model; the margin story here is about pricing structure, not cheaper AI.
+
+The risks:
+
+Trust / failure modes: The real failure mode is bad data reaching a federal report, not a headline — a wrong RSR/ADR submission has compliance consequences for the grantees we'd serve. Confidence-tiered UX blocks anything below a 70% match from auto-applying, and sensitive-identifier-shaped fields are excluded from suggestions entirely. Our own red-team exercise found a real gap we're not hiding: composite/derived fields (like a client ID built from two source fields) aren't represented in our golden dataset yet.
+Scale / governance: Our weakest compounding loop today is Preference — the system doesn't yet learn from a reviewer's repeated decisions, so correction #10 on the same recurring conflict looks like correction #1. Governance itself is scoped (weekly automated eval, HIPAA-driven guardrails, confidence-gated autonomy) but hasn't run against real usage yet; standing that up on live data is part of this ask, not something already proven.
+Competitive: The scenario that forces a kill is exactly the one already named — CAREWare shipping native reconciliation first, or three-plus target agencies telling us their manual burden is under 5 hours a quarter. Either signal, and we stop rather than keep funding a bet that's stopped holding.
+
+The ask:
+2 engineers and 1 PM for a 6-month window, with a hard checkpoint at that point to decide whether this continues, scales, or folds back into the core product line. This covers the H1 build-out already scoped (persistence, abstraction layer, golden dataset, confidence UX, cascading routing) and the H2 validation bets (the crosswalk library, confirming real integration capability with three named vendors, launching metered pricing with design partners). What this trades off: those 2 engineers and 1 PM aren't available to [core roadmap item] for 6 months — naming that specific trade explicitly, since this audience evaluates portfolio trade-offs first.
+
+M1 Baseline vs. Now
+
+M1 baseline: An integrator app that maps Ryan White program data across their EHR, lab, case management, and reporting systems, reducing the manual de-duplication and duplicate data entry staff currently do by hand. Classified as an Automator/Oracle blend, with Confidence M and the top risk flagged early as Data Advantage — the product's defensibility would depend on turning single-agency mappings into something that compounds across agencies over time.
+
+Now: The same core bet holds, but it's no longer a hunch — it's backed by a working prototype, a named weakest loop (Preference, not just "Data Advantage" in the abstract), a named competitive attacker with a specific mechanism (CAREWare's roadmap, Palantir via a federal-contract path), a real cost model split by actual agency size (small CBO vs. large consortium), and a kill criteria specific enough to act on rather than a vague confidence score. What changed most isn't the bet itself — it's that every soft spot in it now has a name, a number, and a plan attached, instead of being a general risk to keep in mind.

@@ -24,14 +24,17 @@
 **Approach:** Tiered confidence with a hard human-in-the-loop trigger at the bottom tier. 
 
 **High confidence (>90%):** The suggestion appears pre-filled directly in the canonical field slot, styled in green state, show the source field name and confidence badge. Copy reads as a statement, not a question: patient.dob → Date of birth · 95%. Standard action: Every suggested field — regardless of confidence score — exposes exactly two actions: an Accept button and an Override: select field option. Accept confirms the current suggestion as-is; Override opens a picker of that system's available fields so the reviewer can choose a different one directly, rather than typing free text or guessing. 
+
 <img width="875" height="69" alt="image" src="https://github.com/user-attachments/assets/45f67541-53e3-4b50-8790-ee40e2412e0e" />
 
 
 **Medium confidence (70-90%):** Same suggestion shown, same source field name — but requires an explicit click to accept, never auto-applied and never eligible for bulk-approve. Amber color to flag medium confidence. Add "why this?" icon/button to show the sample values that drove the match.
+
 <img width="880" height="41" alt="image" src="https://github.com/user-attachments/assets/d5fbcecb-86f7-4c49-9f73-dcca8e6a5f63" />
 
 
 **Low confidence (<70%):** No suggestion is shown at all — not a low-confidence guess with a warning label, an actual absence. The row reads no confident match — map by hand, with a clear one-line reason where possible (e.g., "no sample values available" or "field name doesn't match known patterns"), so the reviewer understands why it's blocked, not just that it is. Routes into the same "map by hand" flow already in the prototype, not a separate queue — the goal is one clear place to land, not a maze of exception states.
+
 <img width="877" height="59" alt="image" src="https://github.com/user-attachments/assets/3b5d9c2b-1d4a-43eb-8453-c8ab4bc9aa72" />
 
 

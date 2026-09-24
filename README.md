@@ -29,7 +29,7 @@
 
 - **Product:** RyFlow, AI Mapping automator for Ryan White Programs
 - **AI Value Archetype:** Automator/Oracle
-- **Vulnerability Scores:** _(add: Moat 3/5 · Data 2/5 · Platform 3/5)_
+- **Vulnerability Scores:** _(Moat 3/5 · Data 2/5 · Platform 3/5)_
 - **Top Risk:** Data Advantage is the weakest axis — RyFlow's real defensibility depends on turning single-agency field mappings into a cross-agency crosswalk library over time.
 - **Confidence:** M
 - **Prototype:** https://lovable.dev/projects/36b5e54d-64f8-4c42-b912-a444d611bc61?magic_link=mc_c5037949-a9e4-43ca-9a09-f5149f2804a6
@@ -43,10 +43,10 @@
 
 **Why this won't get copied in 6 months.**
 
-- **Data Flywheel Score:**
+- **Data Flywheel Score:** 7/20
 - **Weakest Loop:** Preference Loop
 - **Top Encroachment Threat:** HRSA/HAB's own CAREWare product team
-- **Encroachment Defense:** Currently, we are not considering tracking preference of field authority. However preference of which field should be the trusted source for the reporting layer (RSR/ADR reports) can be tracked and ke…
+- **Encroachment Defense:** Save agency-specific decisions in a database, including tracking which overrides a given agency's staff make repeatedly — if the same reviewer consistently picks CAREWare over Case Management for insurance status, surface that as the default the next time a similar conflict appears, instead of asking them to make the same decision again and again.
 - **Vendor Portability:** The core reconciliation engine (rules, precedence, conflict detection, RSR/ADR export) has zero AI dependency and would keep working through any provider issue. The field-mapping suggestion feature specifically is not abstracted or eval-tested yet, so a forced switch there today would be a scramble, not a flip of a setting.
 
 → Details: [`02-the-moat/`](02-the-moat/)

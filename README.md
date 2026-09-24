@@ -27,7 +27,7 @@
 
 **What we're building, for whom, why now.**
 
-- **Product:**
+- **Product:** RyFlow, AI Mapping automator for Ryan White Programs
 - **AI Value Archetype:** Automator/Oracle
 - **Vulnerability Scores:** _(add: Moat 3/5 · Data 2/5 · Platform 3/5)_
 - **Top Risk:** Data Advantage is the weakest axis — RyFlow's real defensibility depends on turning single-agency field mappings into a cross-agency crosswalk library over time.
